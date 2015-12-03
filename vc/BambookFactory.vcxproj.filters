@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\connectThread.cpp">
+      <Filter>connectImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>appImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\readerWindow.cpp">
+      <Filter>displayImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mainWindow.cpp">
+      <Filter>appImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp">
+      <Filter>appImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pdfMainWindow.cpp">
+      <Filter>appImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\txtMainWindow.cpp">
+      <Filter>appImpl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\zconnect.h" />
+    <ClInclude Include="..\src\zdisplay.h" />
+    <ClInclude Include="..\src\stdafx.h">
+      <Filter>appImpl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MOC Include="..\src\connectThread.hxx">
+      <Filter>connectImpl</Filter>
+    </MOC>
+    <MOC Include="..\src\readerWindow.hxx">
+      <Filter>displayImpl</Filter>
+    </MOC>
+    <MOC Include="..\src\mainWindow.hxx">
+      <Filter>appImpl</Filter>
+    </MOC>
+    <MOC Include="..\src\pdfMainWindow.hxx">
+      <Filter>appImpl</Filter>
+    </MOC>
+    <MOC Include="..\src\txtMainWindow.hxx">
+      <Filter>appImpl</Filter>
+    </MOC>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="connectImpl">
+      <UniqueIdentifier>{02c18e37-f1d6-482e-ad1c-fc3d00863907}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="displayImpl">
+      <UniqueIdentifier>{64ddc1eb-4c2d-4570-8590-f46aa78a89cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appImpl">
+      <UniqueIdentifier>{98ab27ba-ee86-460e-85ad-8d180a600d78}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <UIC Include="..\src\readerWindow.ui">
+      <Filter>displayImpl</Filter>
+    </UIC>
+    <UIC Include="..\src\mainWindow.ui">
+      <Filter>appImpl</Filter>
+    </UIC>
+    <UIC Include="..\src\pdfMainWindow.ui">
+      <Filter>appImpl</Filter>
+    </UIC>
+    <UIC Include="..\src\txtMainWindow.ui">
+      <Filter>appImpl</Filter>
+    </UIC>
+  </ItemGroup>
+  <ItemGroup>
+    <QRC Include="..\src\bf.qrc">
+      <Filter>appImpl</Filter>
+    </QRC>
+  </ItemGroup>
+</Project>

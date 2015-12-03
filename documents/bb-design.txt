@@ -1,0 +1,64 @@
+Module1: Auto-connect to bambook in a separated thread with timeout 1 second.
+
+MainThread:
+struct ZPrivateBookInfo
+{
+    wchar_t id[80];
+    wchar_t name[80];
+    wchar_t author[80];
+    wchar_t abstract[256];
+};
+typedef void(* ZOnConnectedCallback)(const wchar_t* sn, const wchar_t* fv, int& totalSpaceInKb, int& freeSpaceInKb, const list<ZPrivateBookInfo>& booklist);
+typedef void(* ZOnBookListChangedCallBack)(int& totalSpaceInKb, int& freeSpaceInKb, const list<ZPrivateBookInfo>& booklist);
+typedef void(* ZTransferingBookFromDeviceCallback)(int status, int progress, const wchar_t* bookId);
+typedef void(* ZTransferingBookToDeviceCallback)(int status, int progress, const wchar_t* snbFile);
+
+bool ZInitDeviceThread(const wchar_t* snbPath, ZOnConnectedCallback callback, ZOnBookListChangedCallBack cb);
+bool ZTransferDevicePrivateBookToSnbPath(const wchar_t* bookId, ZTransferingBookFromDeviceCallback callback);
+bool ZTransferPrivateBookToDevice(const wchar_t* snbFile, bool replace, const wchar_t* replacedBookId, ZTransferingBookToDeviceCallback callback);
+bool ZSendRequestDeleteDeviceBook(const wchar_t* bookId);
+bool ZStopDeviceThread();
+
+
+Module2: Read snb files
+API: BambookUnpackFileFromSnb, BambookVerifySnbFile
+
+BookInfo
+{
+wstring name;
+wstring author;
+wstring language;
+wstring rights;
+wstring publisher;
+wstring generator;
+wstring created;
+wstring abstract;
+wstring cover;
+list<pair<wstring, wstring> > chapters;
+};
+bool GetBookInfo(const wchar_t* snbFile, BookInfo& bookInfo);
+bool DisplayBookOnQt(const wchar_t* snbFile);
+bool DisplayChapterOnQt(const wchar_t* snbcFile);
+
+C:\Users\zhanz\AppData\Local\VirtualStore\Program Files\BamBook\CloudLibrary\privatebooks
+
+txt rule
+
+1. 先读取pdf文本
+2. 文本删除换行符
+	1. 读取整页文本
+	2. 统计最长的句子的字数(中日韩文字按两倍算)max
+	3. 统计本行字数. 
+	3.1 如果本行以特殊符号结尾, 如(...+页数, :), 则不删本行
+	3.2 如果第二行以特殊符号(空格,换行,1.2.等,文本文件定义)开头, 则不删本行
+	3.3 如果本行以非结束符号(.!?...等)结尾, 且第二行以首字母大写开头, 则不删本行
+	3.4 如果本行字数>max*0.9, 则删除本行
+	3.4 如果本行字数>max*0.8, 且加上第二行首词字数>0.9*max, 则删除本行
+3. 调用pdfinfo读取页数信息
+4. 循环调用pdfimages读取每页有几张图片.
+5. 调用pdf2img读取所有图片
+6. 按页制作章节
+7. 写入snb格式
+
+PDF final
+da7e2090bfa6314781364e2c2baddf9e

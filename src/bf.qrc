@@ -1,0 +1,31 @@
+<RCC>
+  <qresource prefix="/">
+    <file>images/under_construction.png</file>
+    <file>images/pdf.png</file>
+    <file>images/txt.png</file>
+    <file>images/Connect64.png</file>
+    <file>images/CopyToBambook64.png</file>
+    <file>images/CopyFromBambook.png</file>
+    <file>images/DeleteBook64.png</file>
+    <file>images/Disconnect64.png</file>
+    <file>images/pdfback.jpg</file>
+    <file>images/folder64.png</file>
+    <file>images/multiColumns.png</file>
+    <file>images/singleColumn.png</file>
+    <file>images/home.png</file>
+    <file>images/home_64.png</file>
+    <file>images/next.png</file>
+    <file>images/next_64.png</file>
+    <file>images/openbook.png</file>
+    <file>images/openbook_left.png</file>
+    <file>images/openbook_right.png</file>
+    <file>images/openbook2.png</file>
+    <file>images/options64.png</file>
+    <file>images/previous.png</file>
+    <file>images/previous_64.png</file>
+    <file>images/ReadBook64.png</file>
+    <file>images/toc.png</file>
+    <file>images/toc_64.png</file>
+    <file>images/defaultCover.png</file>
+  </qresource>
+</RCC>

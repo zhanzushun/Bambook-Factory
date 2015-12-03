@@ -1,0 +1,1 @@
+This is a qt project using vs2008 compiler with vs2010 IDE.
