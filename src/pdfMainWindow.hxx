@@ -1,7 +1,7 @@
 #ifndef PDFMAINWINDOW_H
 #define PDFMAINWINDOW_H
 
-#include "ui_pdfMainWindow.hpp"
+#include "ui_pdfMainWindow.h"
 #include "zconnect.h"
 #include "zdisplay.h"
 #include <QtCore/QThread>

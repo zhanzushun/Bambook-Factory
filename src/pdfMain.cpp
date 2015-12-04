@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "pdfMainwindow.hxx"
-#include <QtGui/QPlastiqueStyle>
+//#include <QtWidgets/QPlastiqueStyle>
 
 QWidget* g_mainwindow = NULL;
 

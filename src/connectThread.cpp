@@ -1,9 +1,8 @@
 #include "stdafx.h"
+#include "..\third-party\include\BambookCore.h"
 #include "connectthread.hxx"
 
-#include "..\..\lib\BambookPCSDKCPPWin\include\BambookCore.h"
-
-#pragma comment(lib, "..\\..\\lib\\BambookPCSDKCPPWin\\lib\\BambookCore.lib")
+//#pragma comment(lib, "..\\third-party\\lib\\BambookCore.lib")
 
 static ConnectThread* g_connectThread = NULL;
 static ConnectThreadHost* g_connectThreadHost = NULL;
@@ -60,7 +59,7 @@ struct CallbackUserData
     void* oldData;
 };
 
-void gTransCallback(uint32_t status, uint32_t progress, intptr_t userData)
+void gTransCallback(uint32_t status, uint32_t progress, intptr_t2 userData)
 {
     if (g_connectThreadHost == NULL)
         return;
@@ -424,7 +423,7 @@ void ConnectThread::transferFromDevice(const wchar_t* bookId, const wchar_t* snb
     data->oldData = cbParam;
     QByteArray buf, buf2;
     BB_RESULT result = BambookFetchPrivBook(g_bbHandle, wstr2str(buf, bookId), wstr2str(buf2, snbPath), 
-        gTransCallback, (intptr_t) data);
+        gTransCallback, (intptr_t2) data);
     Q_ASSERT(result == BR_SUCC);
     m_mutexForBBHandle.unlock();
 }
@@ -446,13 +445,13 @@ void ConnectThread::transferToDevice(const wchar_t* snbFile, bool replace,
     if (replace)
     {
         result = BambookReplacePrivBook(g_bbHandle, wstr2str(buf, snbFile), 
-            wstr2str(buf2, replacedBookId), gTransCallback, (intptr_t)data); 
+            wstr2str(buf2, replacedBookId), gTransCallback, (intptr_t2)data);
         Q_ASSERT(result == BR_SUCC);
     }
     else
     {
         result = BambookAddPrivBook(g_bbHandle, wstr2str(buf, snbFile), gTransCallback, 
-            (intptr_t)data);
+            (intptr_t2)data);
         Q_ASSERT(result == BR_SUCC);
     }
     m_mutexForBBHandle.unlock();

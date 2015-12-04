@@ -1,7 +1,7 @@
 #ifndef CHAPTERS_EDITOR_H
 #define CHAPTERS_EDITOR_H
 
-#include "ui_chaptersEditor.hpp"
+#include "ui_chaptersEditor.h"
 #include <QtCore/QString>
 #include <QtCore/QVector>
 #include <QtCore/QMutex>

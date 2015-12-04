@@ -90,7 +90,7 @@ class BambookTransferCallbackSender : public QObject
 {
     Q_OBJECT
 public:
-    BambookTransferCallbackSender(QObject *parent = 0) {parent;}
+    BambookTransferCallbackSender(QObject *parent = 0) {}
     void emitTransfering(int status, int progress, void* userData);
 Q_SIGNALS:
     void onTransfering(int status, int progress, void* userData);

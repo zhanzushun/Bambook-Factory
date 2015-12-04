@@ -1,9 +1,10 @@
 #ifndef STDAFX_H
 #define STDAFX_H
 
-#include <QtCore/QtCore>
-#include <QtGui/QtGui>
+#include <QtCore>
+#include <QtGui>
 #include <QtXml/QtXml>
+#include <QtWidgets>
 
 #include <string>
 #include <set>

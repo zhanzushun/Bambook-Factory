@@ -1,7 +1,7 @@
 #ifndef TXT_MAINWINDOW_H
 #define TXT_MAINWINDOW_H
 
-#include "ui_txtMainWindow.hpp"
+#include "ui_txtMainWindow.h"
 #include "zconnect.h"
 #include "zdisplay.h"
 #include <QtCore/QThread>

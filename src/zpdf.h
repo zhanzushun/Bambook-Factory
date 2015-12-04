@@ -1,7 +1,7 @@
 #ifndef PDF_H
 #define PDF_H
 
-#ifdef PDFEXPORTER_EXPORTS
+#ifdef PDFEXPORTER_LIBRARY
 #define PDF_API __declspec(dllexport)
 #else
 #define PDF_API __declspec(dllimport)

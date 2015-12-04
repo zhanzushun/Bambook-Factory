@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "ui_mainWindow.hpp"
+#include "ui_mainWindow.h"
 #include "zconnect.h"
 #include "zdisplay.h"
 
